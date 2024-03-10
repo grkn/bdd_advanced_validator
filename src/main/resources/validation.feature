@@ -1,9 +1,8 @@
 Scenario - Validation for example flow.
-Given Method is Post and Endpoint is /example/{path}
-When User sends @RequestParam as queryParam
-And User sends @RequestBody as body
-And User sends @PathVariable as path
-Then queryParam can not be null, empty
-And body.id can not be blank
-And path can not be blank
-And path must be validated by \w*
+Given Method is Post and Endpoint is /tgf/{data}
+When User sends @RequestParam as param
+And User sends @RequestBody as sampleDto
+And User sends @PathVariable as data
+Then param can not be empty
+And sampleDto.id can not be null
+And data can not be blank
