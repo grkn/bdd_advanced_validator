@@ -1,0 +1,4 @@
+(Given|And)( Method is )(\w*)( and Endpoint is )(.*)
+(When|And) User sends @\w* as (.*)
+(Then|And) ((\w|\.)*) can not be (.*)
+(Then|And) ((\w|\.)*) must be validated by (.*)
