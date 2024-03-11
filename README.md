@@ -10,6 +10,8 @@ It is extendable to increase your validators and it is free to use and understan
 
 Of course there are several reflections going on in the library but it is just for determining classes, methods and fields.
 
+Most crucial part is when you need to know about a api that is not implemented by you, then you need to know what is mandatory or not. 
+If you write good explanation to your validation then it will be solved directly.
 
 ## How to use it
 
