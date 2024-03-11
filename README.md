@@ -146,12 +146,18 @@ You can find example documents in libraries resource file.
 ## Advantages
 
 1- All validations can be read by any developer or tester.(Human readable)
+
 2- You can simply customize it with your validators.
+
 3- All validations are prepared on spring startup so you can not change it and it is immutable.
+
 4- For each scenario it is easy to use and it is easy to understand which fields are validated.
 
 ## Disadvantages
 
 1- According to your validation file boot start can be effected. (I dont think that you have 10000 endpoints in application)
+
 2- Java specifications are not considered in development so there is not any standardization.
+
 3- You need to know regex.
+
