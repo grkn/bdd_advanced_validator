@@ -1,5 +1,16 @@
 # Behaivor Driven Constraint Validator.
 
+## What is solved with this library
+
+You don't need to check all classes, fields and constraints. It is in a file and you can easily find it in one place.
+
+You can create your own standardization and simply validate your data transfer object or input fields.
+
+It is extendable to increase your validators and it is free to use and understand.
+
+Of course there are several reflections going on in the library but it is just for determining classes, methods and fields.
+
+
 ## How to use it
 
 I did not put library to maven repository so I will explain how to use it.
