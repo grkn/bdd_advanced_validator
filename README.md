@@ -182,3 +182,17 @@ You can find example documents in libraries resource file.
 
 3- You need to know regex.
 
+
+## Simple flow
+
+1- Parse Gherkin file
+
+2- Match your regex patterns with parsed gherkin file.
+
+3- Find http flow, path of the api that you will validate.
+
+4- When user sends a parameter get parameter name.
+
+5- If then statement is written, basically it is assertion and validate your parameter which is given in when statement.
+
+
