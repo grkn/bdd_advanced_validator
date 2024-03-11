@@ -16,7 +16,9 @@ I did not put library to maven repository so I will explain how to use it.
       </dependency>
 ```
 4- Enable library with @EnableAdvancedValidation which can put on any spring class.
+
 5- Write feature file
+
 ```
 Scenario - Validation for example flow.
 Given Method is Post and Endpoint is /tgf/{data}
@@ -44,8 +46,8 @@ public class GivenRegexExtractor implements GivenRegexResultExtractor<Matcher, M
     @Override
     public Map<MandatoryKeyword, String> parse(Matcher matcher) {
         Map<MandatoryKeyword, String> map = new HashMap<>();
-        map.put(MandatoryKeyword.METHOD,matcher.group(3));
-        map.put(MandatoryKeyword.PATH,matcher.group(5));
+        map.put(MandatoryKeyword.METHOD,matcher.group(3)); // Given Method is Post and Endpoint is /tgf/{data}: Post
+        map.put(MandatoryKeyword.PATH,matcher.group(5));  // Given Method is Post and Endpoint is /tgf/{data}: /tgf/{data}
         return map;
     }
 }
@@ -55,8 +57,8 @@ public class ThenRegexExtractor implements ThenRegexResultExtractor<Matcher, Cus
     @Override
     public CustomPair parse(Matcher matcher) {
         CustomPair customPair = new CustomPair();
-        customPair.setFieldName(matcher.group(2));
-        customPair.setCondition(matcher.group(4));
+        customPair.setFieldName(matcher.group(2));  // field name in then statement
+        customPair.setCondition(matcher.group(4)); // empty, blank or null
         return customPair;
     }
 }
@@ -66,7 +68,7 @@ public class ThenRegexExtractor implements ThenRegexResultExtractor<Matcher, Cus
 public class WhenRegexExtractor implements WhenRegexResultExtractor<Matcher, String> {
     @Override
     public String parse(Matcher matcher) {
-        return matcher.group(2);
+        return matcher.group(2); // field name in when statement
     }
 }
 ```
@@ -136,3 +138,20 @@ public class Empty extends BaseCondition<Object> {
     }
 }
 ```
+
+
+You can find example documents in libraries resource file.
+
+
+## Advantages
+
+1- All validations can be read by any developer or tester.(Human readable)
+2- You can simply customize it with your validators.
+3- All validations are prepared on spring startup so you can not change it and it is immutable.
+4- For each scenario it is easy to use and it is easy to understand which fields are validated.
+
+## Disadvantages
+
+1- According to your validation file boot start can be effected. (I dont think that you have 10000 endpoints in application)
+2- Java specifications are not considered in development so there is not any standardization.
+3- You need to know regex.
