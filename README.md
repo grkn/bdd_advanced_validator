@@ -30,7 +30,15 @@ I did not put library to maven repository so I will explain how to use it.
 ```
 4- Enable library with @EnableAdvancedValidation which can put on any spring class.
 
-5- Write feature file
+```
+@Configuration
+@EnableAdvancedValidation
+public class AppConfig {
+
+}
+```
+
+5- Write a feature file to create validations
 
 ```
 Scenario - Validation for example flow.
